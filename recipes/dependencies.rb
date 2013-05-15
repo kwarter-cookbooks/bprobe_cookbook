@@ -59,7 +59,7 @@ when "ubuntu"
 
   apt_repository "boundary" do
     uri "https://apt.boundary.com/ubuntu/"
-    distribution node[:lsb][:codename]
+    distribution node[:boundary][:distribution] or node[:lsb][:codename]
     components ["universe"]
     key "https://apt.boundary.com/APT-GPG-KEY-Boundary"
     action :add

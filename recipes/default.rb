@@ -36,7 +36,7 @@ directory node[:boundary][:bprobe][:etc][:path] do
 end
 
 # download and install the meter cert and key files
-bprobe_certificates node[:fqdn] do
+bprobe_certificates node.name do
   action :install
 end
 
